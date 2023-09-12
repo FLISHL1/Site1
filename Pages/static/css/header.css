@@ -1,0 +1,64 @@
+header{
+    background: linear-gradient(to right, rgb(0, 110, 255), pink);
+    height: 100px;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+
+    top: 0;
+    width: 100%;
+
+}
+
+footer{
+    height: 100px;
+    /* background: linear-gradient(to left, rgb(174, 192, 13), rgb(122, 84, 0)); */
+    background-color: rgb(0, 132, 255);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 45%;
+    float: left;
+    
+    /* margin: auto auto auto 0; */
+}
+
+.navbtn{
+    margin: auto;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin: auto 0 auto 40px;
+    font-size: 16pt;
+}
+
+.contact{
+    display: flex;
+    margin: auto 0 auto 50px;
+    
+}
+
+.contact_text{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14pt;
+    margin-right: 45px;
+    color: white;
+}
+
+
+#mainbtn{
+    font-size: 24pt;
+    
+}
+
+#loginbtn{
+    color:white;
+    margin: auto 40px auto auto;
+}

@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}
+
+
+
+
+main{
+    min-width: 99vw;
+    min-height: 110vh;  
+    /* top: 50px; */
+    margin: 0;
+    background-color: rgba(21, 135, 170, 0.2);
+    background-blend-mode: multiply;
+    background-image: url("../image/background_main.jpg");
+}
+
