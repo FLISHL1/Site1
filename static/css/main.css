@@ -11,6 +11,9 @@ main{
     /* top: 50px; */
     margin: 0;
     background-color: rgba(21, 135, 170, 0.2);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
     background-blend-mode: multiply;
     background-image: url("../image/background_main.jpg");
 }
