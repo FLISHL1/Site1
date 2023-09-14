@@ -18,3 +18,25 @@ main{
     background-image: url("../image/background_main.jpg");
 }
 
+.row{
+    background-color: rgba(0, 0, 0, 0.301);
+    padding: 10px;
+    border-radius: 5px;
+}
+.head{
+    background-color:rgba(165, 164, 164, 0.5);
+    color: rgb(71, 129, 16);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+table {
+    position: absolute;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13pt;
+    color: white;
+    bottom: 25%;
+    padding: 0 25% 0 25%;
+    
+}

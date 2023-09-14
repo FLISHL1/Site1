@@ -17,8 +17,8 @@
 <body>
     <header>
         <nav class='navbar'>
-            <a href="main.html" class="navbtn" id="mainbtn">Моя страница</a>
-            <a href="main.html" class="navbtn">Главная</a>
+            <a href="" class="navbtn" id="mainbtn">Моя страница</a>
+            <a href="" class="navbtn">Главная</a>
             <a href="#bottom" class="navbtn">Контакты</a>
             <a href="" class="navbtn">Достижения</a>
         </nav>
@@ -27,19 +27,33 @@
 
 
     <main>
-        <img src="static/image/meow!.png" width="70px" style="float: right; margin: 50px 50px 0 0;">
-        <img src="static/image/image_cat.png" width="130px" style="float: right; margin: 80px 0 0 0;">
+        <div>
+            <img src="static/image/meow!.png" width="70px" style="float: right; margin: 50px 50px 0 0;">
+            <img src="static/image/image_cat.png" width="130px" style="float: right; margin: 80px 0 0 0;">
+        </div>
         <table>
             <thead>
                 <tr>
-                    <th>Природные явления</th>
-                    <th>Описание</th>
+                    <th scope="col" class="head">Природные явления</th>
+                    <th scope="col" class="head">Описание</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Лес</td>
-                    <td>Насладитесь красотой леса и его живописными пейзажами. Возможно, вы даже встретите лесных обитателей, таких как олени и белки.</td>
+                    <td class="row">Лес</td>
+                    <td class="row">Насладитесь красотой леса и его живописными пейзажами. <br>Возможно, вы даже встретите лесных обитателей, таких как олени и белки.</td>
+                </tr>
+                <tr>
+                    <td class="row">Горы</td>
+                    <td class="row">Изучайте величественные горные вершины и прекрасные горные озера. <br>Возможно, вам захочется попробовать себя в альпинизме.</td>
+                </tr>
+                <tr>
+                    <td class="row">Океан</td>
+                    <td class="row">Погрузитесь в мир океанских глубин и изучайте подводную жизнь. <br> Возможно, вы найдете сокровища на дне моря.</td>
+                </tr>
+                <tr>
+                    <td class="row">Кот:)</td>
+                    <td class="row">Наш дружелюбный кот, Meow, всегда готов весело провести время в вашей компании. <br> Он обожает природу так же, как и вы!.</td>
                 </tr>
             </tbody>
         </table>
