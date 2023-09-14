@@ -6,6 +6,7 @@ body{
 
 
 main{
+    display: flex;
     overflow: auto;
     min-width: 99vw;
     min-height: 110vh;  
@@ -15,7 +16,7 @@ main{
     background-size:cover;
     background-position:center;
     background-blend-mode: multiply;
-    background-image: url("../image/background_main.jpg");
+    background-image: url("../image/background_main.png");
 }
 
 .row{
@@ -41,6 +42,6 @@ table {
     font-family: 'PT Sans', sans-serif;
     font-size: 13pt;
     color: white;
-    margin: 300px auto 0 auto;
+    margin: auto;
     
 }

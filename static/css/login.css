@@ -5,7 +5,7 @@ form{
     flex-direction: column;
     width: 25%;
     background-color: rgba(211, 211, 211, 0.61);
-    margin: 300px auto 0 auto;
+    margin: auto;
 }
 
 .input{
@@ -20,10 +20,9 @@ form{
 
 .checkbox{
     margin-right: 15px;
-    border: 0;
 }
 
-.label_checkbox{
+.label_box{
     margin: 10px auto 10px auto;
     font-family: 'PT Sans', sans-serif;
     font-size: 16pt;
