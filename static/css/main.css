@@ -6,9 +6,9 @@ body{
 
 
 main{
+    overflow: auto;
     min-width: 99vw;
     min-height: 110vh;  
-    /* top: 50px; */
     margin: 0;
     background-color: rgba(21, 135, 170, 0.2);
     background-repeat:no-repeat;
@@ -29,7 +29,13 @@ main{
     padding: 10px;
     border-radius: 5px;
 }
-
+.cat{
+    /* float: right;
+    margin: 125px 50px 0 0; */
+    position: absolute;
+    top: 220px;
+    right: 30px;
+}
 table {
     position: absolute;
     text-align: center;
