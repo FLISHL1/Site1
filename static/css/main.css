@@ -37,12 +37,10 @@ main{
     right: 30px;
 }
 table {
-    position: absolute;
     text-align: center;
     font-family: 'PT Sans', sans-serif;
     font-size: 13pt;
     color: white;
-    bottom: 25%;
-    padding: 0 25% 0 25%;
+    margin: 300px auto 0 auto;
     
 }
