@@ -16,8 +16,8 @@
 
 <body>
     <header>
-
-        <img src="<?php echo "/static/image/cat_logo.png"; ?>" width="80px" height="80px" style="margin: auto 0 auto 25px;">
+        <?php echo "gfgfФЫВФЫВФЫВФЫВЫФВФЫВФВЫФВФЫВ" ?>
+        <!-- <img src="/static/image/cat_logo.png" width="80px" height="80px" style="margin: auto 0 auto 25px;"> -->
         <nav class='navbar'>
             <a href="index.html" class="navbtn" id="mainbtn">Моя страница</a>
             <a href="index.html" class="navbtn">Главная</a>
