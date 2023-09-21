@@ -16,9 +16,9 @@
     <?php 
     
     $link_main="../index.php";
+    $link_naturIsAm="naturIsAm.php";
     $link_login="login.php";
     $link_feedback="feedback.php";
-    
     
     
     ?>
@@ -28,12 +28,32 @@
     <header>
         <img src="../static/image/cat_logo.png" width="80px" height="80px" style="margin: auto 0 auto 25px;">
         <nav class='navbar'>
-            <a href="../index.php" class="navbtn" id="mainbtn">Моя страница</a>
-            <a href="../index.php" class="navbtn">Главная</a>
+            
+            <a href="<?php 
+            $visible=true;
+            $text='Моя страница';
+            echo $link_main; 
+            ?>" class="<?php if($visible){echo 'navbtn';} ?>" id="mainbtn"><?= $text?></a>
+            
+            <a href="<?php 
+            $visible=true;
+            $text='Главная';
+            echo $link_main; 
+            ?>" class="<?php if($visible){echo 'navbtn';} ?>"> <?= $text?> </a>
+            
             <a href="#bottom" class="navbtn">Контакты</a>
-            <a href="" class="navbtn">Достижения</a>
+            
+            <a href="<?php 
+            $visible=true;
+            $text='Достижения';
+            echo ''; 
+            ?>" class="<?php if($visible){echo 'navbtn';} ?>"> <?= $text?> </a>
         </nav>
-        <a class="navbtn loginbtn" href="php/login.html">Login</a>
+        <a href="<?php 
+            $visible=true;
+            $text='Авторизация';
+            echo $link_login; 
+            ?>" class="<?php if($visible){echo 'navbtn loginbtn';} ?>"> <?= $text?> </a>
     </header>
 
 
@@ -58,7 +78,11 @@
         <p class="contact_text"><b>Телефон:</b> +7 (960) 470-79-81</p>
         <p class="contact_text"><b>Собрано:</b> <?php echo date("Y-m-d H:i:s") ?> </p>
         </div>
-        <a href="feedback.html" class="contact_text navbtn">Обратная связь</a>
+        <a href="<?php 
+            $visible=true;
+            $text='Обратная  связь';
+            echo $link_feedback; 
+            ?>" class="<?php if($visible){echo 'contact_text navbtn';} ?>"> <?= $text?> </a>
     </footer>
 
 

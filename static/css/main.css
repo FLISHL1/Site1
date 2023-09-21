@@ -17,7 +17,9 @@ main{
     background-blend-mode: multiply;
     background-image: url("../image/background_main.png");
 }
-
+li{
+    margin: 20px;
+}
 section{
     width: 50%;
     margin: auto;
@@ -67,11 +69,18 @@ section{
 }
 
 .image{
-    width: 400px;
-    height: 450px;
+    width: 350px;
+    height: 400px;
     margin: auto;
     border-radius: 7px;
-    box-shadow: 60px -16px rgba(0, 128, 128, 0.479);
+    box-shadow:  60px -16px 4px rgba(0, 128, 128, 0.479);
+}
+.image:hover{
+    width: 350px;
+    height: 400px;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow:  60px -16px 10px rgba(255, 166, 0, 0.479);
 }
 table {
     text-align: center;

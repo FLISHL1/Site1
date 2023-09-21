@@ -4,7 +4,6 @@ header{
     /* position: sticky; */
     display: flex;
     flex-direction: row;
-
     top: 0;
     width: 100%;
 
@@ -24,7 +23,7 @@ footer{
     justify-content: flex-start;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 45%;
+    width: auto;
     float: left;
     
     /* margin: auto auto auto 0; */
