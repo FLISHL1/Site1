@@ -2,21 +2,25 @@ body{
     margin: 0;
 }
 
-
-
-
 main{
     display: flex;
     overflow: auto;
+    flex-direction: column;
     min-width: 99vw;
-    min-height: 110vh;  
+    min-height: 110vh; 
+
     margin: 0;
-    background-color: rgba(21, 135, 170, 0.2);
+    background-color: rgba(12, 73, 92, 0.4);
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
     background-blend-mode: multiply;
     background-image: url("../image/background_main.png");
+}
+
+section{
+    width: 50%;
+    margin: auto;
 }
 
 .row{
@@ -25,17 +29,49 @@ main{
     border-radius: 5px;
 }
 .head{
-    background-color:rgba(165, 164, 164, 0.5);
-    color: rgb(71, 129, 16);
+    background-color:rgba(165, 164, 164, 0.4);
+    color: rgb(157, 255, 118);
     padding: 10px;
     border-radius: 5px;
 }
-.cat{
-    /* float: right;
-    margin: 125px 50px 0 0; */
-    position: absolute;
-    top: 220px;
-    right: 30px;
+.text {
+    font-family: 'PT Sans', sans-serif; 
+    font-size: 15pt;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+.h1{
+    margin-top: 50px;
+    font-size: 29pt;
+    text-align: center;
+}
+
+.h2{
+    padding-left: 50px;
+    font-size: 20pt;
+    text-align: center;
+}
+
+.p{
+    font-size: 15pt;
+    text-align: justify;
+}
+
+
+.block{
+    margin: auto 25px 3% 25px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.image{
+    width: 400px;
+    height: 450px;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 60px -16px rgba(0, 128, 128, 0.479);
 }
 table {
     text-align: center;

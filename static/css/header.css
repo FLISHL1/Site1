@@ -1,7 +1,7 @@
 header{
     background: linear-gradient(to right, rgb(0, 110, 255), pink);
     height: 100px;
-    position: sticky;
+    /* position: sticky; */
     display: flex;
     flex-direction: row;
 
@@ -38,7 +38,9 @@ footer{
     margin: auto 0 auto 40px;
     font-size: 16pt;
 }
-
+.navbtn:hover{
+    color: rgb(255, 166, 0);
+}
 .contact{
     display: flex;
     margin: auto 0 auto 50px;
@@ -58,7 +60,7 @@ footer{
     
 }
 
-#loginbtn{
+.loginbtn{
     color:white;
     margin: auto 40px auto auto;
 }
