@@ -74,6 +74,7 @@ section{
     margin: auto;
     border-radius: 7px;
     box-shadow:  60px -16px 4px rgba(0, 128, 128, 0.479);
+    transition: box-shadow 250ms;
 }
 .image:hover{
     width: 350px;

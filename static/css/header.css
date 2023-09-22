@@ -36,6 +36,7 @@ footer{
     text-decoration: none;
     margin: auto 0 auto 40px;
     font-size: 16pt;
+    transition: color 100ms;
 }
 .navbtn:hover{
     color: rgb(255, 166, 0);
