@@ -17,7 +17,7 @@
     $link_naturIsAm="php/naturIsAm.php";
     $link_login="php/login.php";
     $link_feedback="php/feedback.php";
-    
+    $link_stableFuture="php/stableFuture.php";
     
     ?>
 </head>
@@ -43,8 +43,8 @@
             
             <a href="<?php 
             $visible=true;
-            $text='Достижения';
-            echo ''; 
+            $text='Стабильное будущее';
+            echo $link_stableFuture; 
             ?>" class="<?php if($visible){echo 'navbtn';} ?>"> <?= $text?> </a>
         </nav>
         <a href="<?php 
