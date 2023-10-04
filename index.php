@@ -49,7 +49,7 @@
         </nav>
         <a href="<?php 
             $visible=true;
-            $text='Авторизация';
+            $text='Авторизция';
             echo $link_login; 
             ?>" class="<?php if($visible){echo 'navbtn loginbtn';} ?>"> <?= $text?> </a>
     </header>
