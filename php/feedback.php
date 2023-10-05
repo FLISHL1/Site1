@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Обратная связь</title>
+    <title>Конопский Кирилл 221-361 л4</title>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../static/css/header.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../static/css/feedback.css" media="screen">
@@ -12,72 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     
     <!-- <meta name="http-equiv=&quot;Content-Type&quot;" content="text/html; charset=utf-8"> -->
-    <?php 
-    
-    $link_main="../index.php";
-    $link_naturIsAm="naturIsAm.php";
-    $link_login="login.php";
-    $link_feedback="feedback.php";
-    $link_stableFuture="stableFuture.php";
-    
-    ?>
 </head>
 
-<body>
-    <header>
-        <img src="../static/image/cat_logo.png" width="80px" height="80px" style="margin: auto 0 auto 25px;">
-        <nav class='navbar'>
-            
-            <a href="<?php 
-            $visible=true;
-            $text='Моя страница';
-            echo $link_main; 
-            ?>" class="<?php if($visible){echo 'navbtn';} ?>" id="mainbtn"><?= $text?></a>
-            
-            <a href="<?php 
-            $visible=true;
-            $text='Природа удивительна';
-            echo $link_main; 
-            ?>" class="<?php if($visible){echo 'navbtn';} ?>"> <?= $text?> </a>
-            
-            <a href="#bottom" class="navbtn">Контакты</a>
-            
-            <a href="<?php 
-            $visible=true;
-            $text='Стабильное будущее';
-            echo $link_stableFuture; 
-            ?>" class="<?php if($visible){echo 'navbtn';} ?>"> <?= $text?> </a>
-        </nav>
-        <a href="<?php 
-            $visible=true;
-            $text='Авторизация';
-            echo $link_login; 
-            ?>" class="<?php if($visible){echo 'navbtn loginbtn';} ?>"> <?= $text?> </a>
-    </header>
-
-
+<?php 
+$link_main="../index.php";
+$link_naturIsAm="naturIsAm.php";
+$link_login="login.php";
+$link_feedback="feedback.php";
+$link_stableFuture="stableFuture.php";
+include "header.php";
+?>
     <main>
         
-        <form action="https://httpbin.org/post" method="POST">
+        <form action="home.php" method="POST">
             <label class="label_box title">Обратная связь</label>
-            <input type="text" name="name"  class="input" placeholder="ФИО">
-            <input type="email" name="email"  class="input" placeholder="Email">
+            <label class="label_box">ФИО: <input type="text" name="name"  class="input label" placeholder="ФИО" <?php echo 'value='.$_GET["N"]?> required> </label>
+            <label class="label_box">Email: <input type="email" name="email"  class="input label" placeholder="Email" <?php echo 'value='.$_GET["E"]?> required> </label>
+            <label class="label_box">От куда узнали про наш сайт:</label>
             <label class="label_box">
-                <input type="radio" name="distribut" id="friend" class="radiobutton">От друга
-            </label>
-
-            <label class="label_box">
-                <input type="radio" name="distribut" id="internet" class="radiobutton">Из инернета
+                <input type="radio" name="distribut" value="friend" class="radiobutton" <?php if ($_GET['S'] == 'friend'){ echo 'checked';}?>>От друга
+                <br><br>
+                <input type="radio" name="distribut" value="internet" class="radiobutton"<?php if ($_GET['S'] == 'internet'){ echo 'checked';}?>>Из инернета
             </label>
 
            <label class="label_box">Тип обращения: 
             <select name="type_feedback" class="input select">
-                <option value="complain">Жалоба</option>
-                <option value="complain">Предложение</option>
+                <option value="propose" >Предложение</option>
+                <option value="complain" selected>Жалоба</option>
             </select>
             </label>
-            <textarea class="input" name="feedback_text" rows="5" cols="33"></textarea>
-            <input class="input" type="file">
+            <textarea class="input" name="feedback_text" rows="5" cols="33" required></textarea>
+            <input class="input" type="file" name='attachment'>
             <label class="label_box">
                 <input type="checkbox" name="remeber" class="checkbox">Даю согласие на обработку <br>персональных данных
             </label>

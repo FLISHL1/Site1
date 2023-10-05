@@ -3,9 +3,9 @@ form{
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 30%;
     background-color: rgba(211, 211, 211, 0.61);
-    margin: auto;
+    margin: 50px auto 50px auto;
 }
 
 .input{
@@ -17,6 +17,10 @@ form{
     font-size: 14pt;
 
 }
+.label{
+    margin: 20px 0px 10px 10px;
+}
+
 .select{
     margin: 0 0 0 10px;
 }
@@ -25,7 +29,7 @@ form{
 }
 
 .label_box{
-    margin: 10px auto 10px auto;
+    margin: 10px auto 3px auto;
     font-family: 'PT Sans', sans-serif;
     font-size: 16pt;
     color: rgb(54, 54, 54);

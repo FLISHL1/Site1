@@ -1,0 +1,53 @@
+form{
+    border: solid 3px rgba(153, 199, 135, 0.582);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    background-color: rgba(211, 211, 211, 0.61);
+    margin: 50px auto 50px auto;
+}
+
+.input{
+    margin: 20px 50px 10px 50px;
+    padding: 8px;
+    border: 0;
+    border-radius: 4px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14pt;
+
+}
+.label{
+    margin: 20px 0px 10px 10px;
+}
+
+.select{
+    margin: 0 0 0 10px;
+}
+.checkbox{
+    margin-right: 15px;
+}
+
+.label_box{
+    margin: 10px auto 3px auto;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16pt;
+    text-align: center;
+    color: rgb(54, 54, 54);
+}
+
+.title{
+    font-size: 18pt;
+}
+
+.btn{
+    margin: 10px auto 10px auto;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18pt;
+    border: 0;
+    border-radius: 4px;
+    padding: 4px 15px 4px 15px;
+}
