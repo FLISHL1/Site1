@@ -26,8 +26,8 @@ include "header.php";
         
         <form action="home.php" method="POST">
             <label class="label_box title">Обратная связь</label>
-            <label class="label_box">ФИО: <input type="text" name="name"  class="input label" placeholder="ФИО" <?php echo 'value='.$_GET["N"]?> required> </label>
-            <label class="label_box">Email: <input type="email" name="email"  class="input label" placeholder="Email" <?php echo 'value='.$_GET["E"]?> required> </label>
+            <label class="label_box">ФИО: <input type="text" name="name"  class="input label" placeholder="ФИО" <?php if (isset($_GET['N'])) {echo 'value='.$_GET["N"];}?> required> </label>
+            <label class="label_box">Email: <input type="email" name="email"  class="input label" placeholder="Email" <?php if (isset($_GET['N'])) {echo 'value='.$_GET["N"];}?>  required> </label>
             <label class="label_box">От куда узнали про наш сайт:</label>
             <label class="label_box">
                 <input type="radio" name="distribut" value="friend" class="radiobutton" <?php if ($_GET['S'] == 'friend'){ echo 'checked';}?>>От друга
