@@ -25,14 +25,21 @@ include "header.php";
 
     <main>
         
-        <form  action="https://httpbin.org/post" method="POST">
+        <form  action="login.php" method="POST">
             <input type="text" name="login"  class="input" placeholder="Логин">
             <input type="password" name="password"  class="input" placeholder="Пароль">
             <label class="label_box">
                 <input type="checkbox" name="remeber" class="checkbox">Запомнить меня
             </label>
             <input type="submit" class="btn" value="Войти">
+            <?php
+            if (isset($_POST['login']) and isset($_POST['password'])){
+            if ($_POST['login'] == 'user' and $_POST['password'] == 'user'){
+                echo '<label class="label_box">Авторизация прошла успешно</label>';
+            }
+            }
             
+            ?>
         </form>
     
     </main>
