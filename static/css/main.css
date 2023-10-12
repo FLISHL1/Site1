@@ -67,14 +67,21 @@ section{
     flex-direction: row;
     
 }
-
+.list_image{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    flex-wrap: wrap;
+}
 .image{
     width: 350px;
     height: 400px;
     margin: auto;
     border-radius: 7px;
     box-shadow:  60px -16px 4px rgba(0, 128, 128, 0.479);
-    transition: box-shadow 250ms;
+    transition: box-shadow 250ms, width 250ms, height 250ms;
+
 }
 .image:hover{
     width: 350px;
@@ -90,4 +97,22 @@ table {
     color: white;
     margin: auto;
     
+}
+
+.list{
+    width: 200px;
+    height: 250px;
+    margin: 10px 10px;
+    box-shadow:  none;
+}
+.list:hover{
+    width: 225px;
+    height: 275px;
+    margin: 10px 10px;
+    border-radius: 7px;
+    box-shadow:  10px -16px 10px rgba(255, 166, 0, 0.479);
+}
+.termin{
+    margin: 50px auto;
+    width: 1100px;
 }

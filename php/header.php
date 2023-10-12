@@ -1,6 +1,6 @@
 
 
-<body>
+
     <header>
         <img src="../static/image/cat_logo.png" width="80px" height="80px" style="margin: auto 0 auto 25px;">
         <nav class='navbar'>

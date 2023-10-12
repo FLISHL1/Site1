@@ -13,6 +13,7 @@
     
     <!-- <meta name="http-equiv=&quot;Content-Type&quot;" content="text/html; charset=utf-8"> -->
 </head>
+<body>
 
 <?php 
 $link_main="../index.php";
@@ -24,6 +25,8 @@ include "header.php";
 
 
 ?>
+
+
 <main>
         <form> 
             <?php 
@@ -44,18 +47,9 @@ include "header.php";
 
     </main>
 
+    <?php 
+    include 'footer.php';
+    ?>
 
-    <footer>
-        <div class="contact" id="bottom">  
-        <p class="contact_text"><b>Email:</b> kirill15022005@gmail.com</p>
-        <p class="contact_text"><b>Телефон:</b> +7 (960) 470-79-81</p>
-        <p class="contact_text"><b>Собрано:</b> <?php echo date("Y-m-d H:i:s") ?> </p>
-        </div>
-        <a href="<?php 
-            $visible=true;
-            $text='Обратная  связь';
-            echo $link_feedback; 
-            ?>" class="<?php if($visible){echo 'contact_text navbtn';} ?>"> <?= $text?> </a>
-    </footer>
 
 </body>
