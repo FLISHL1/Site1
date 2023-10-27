@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Конопский Кирилл 221-361 л4</title>
+    <title><?php echo 'Конопский Кирилл 221-361 л4'?></title>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../static/css/header.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
