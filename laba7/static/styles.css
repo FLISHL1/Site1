@@ -1,0 +1,54 @@
+:root {
+    --btn-size: 50px;
+}
+
+div button {
+    width: var(--btn-size);
+    height: var(--btn-size);
+    background-color: rgb(207, 206, 206);
+    border-radius: 50%;
+    border-color: rgb(66, 66, 66);
+    border-width: 1.5px;
+    border-style: solid;
+    margin: 5px;
+    
+}
+div button:hover {
+    background-color: rgb(148, 147, 147);
+    border-color: rgb(175, 174, 174);
+    
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.digits{
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.other .row{
+    margin-left: 10px;
+}
+.screen{
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    color: white;
+    height: 50px;
+    background-color: rgb(218, 48, 48);
+}
+
+.calc-container{
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: gray;
+    border-style: solid;
+    width: 17%;
+    height: 12%;
+}
