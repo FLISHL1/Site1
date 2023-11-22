@@ -3,9 +3,8 @@
 // Возможные операторы: +, -, *, /.
 
 
-
 function priority(operation) {
-    if (operation == '+' || operation == '-') {
+    if (operation === '+' || operation === '-') {
         return 1;
     } else {
         return 2;
@@ -36,17 +35,17 @@ function tokenize(str) {
     let tokens = [];
     let lastNumber = '';
     for (char of str) {
-        if (isDigit(char) || char == '.') {
+        if (isDigit(char) || char === '.') {
             lastNumber += char;
         } else {
-            if(lastNumber.length > 0) {
+            if (lastNumber.length > 0) {
                 tokens.push(lastNumber);
                 lastNumber = '';
             }
-        } 
-        if (isOperation(char) || char == '(' || char == ')') {
+        }
+        if (isOperation(char) || char === '(' || char === ')') {
             tokens.push(char);
-        } 
+        }
     }
     if (lastNumber.length > 0) {
         tokens.push(lastNumber);
@@ -79,7 +78,7 @@ function compile(str) {
         } else if (token == '(') {
             stack.push(token);
         } else if (token == ')') {
-            while (stack.length > 0 && stack[stack.length-1] != '(') {
+            while (stack.length > 0 && stack[stack.length - 1] !== '(') {
                 out.push(stack.pop());
             }
             stack.pop();
@@ -103,13 +102,13 @@ function evaluate(str) {
     // your code here
     let stack = [];
     str = str.split(" ");
-    for (let i = 0; i < str.length; i++){
-        if (isNumeric(str[i])){
+    for (let i = 0; i < str.length; i++) {
+        if (isNumeric(str[i])) {
             stack.push(Number(str[i]))
-        } else if (isOperation(str[i])){
+        } else if (isOperation(str[i])) {
             let num2 = stack.pop();
             let num1 = stack.pop();
-            switch (str[i]){
+            switch (str[i]) {
                 case "+":
                     stack.push(num1 + num2)
                     break;
@@ -118,10 +117,10 @@ function evaluate(str) {
                     break;
                 case "*":
                     stack.push(num1 * num2)
-                    break; 
+                    break;
                 case "/":
                     stack.push(num1 / num2)
-                    break;        
+                    break;
             }
         }
     }
@@ -144,17 +143,17 @@ function evaluate(str) {
 
 function clickHandler(event) {
     // document.getElementById().className
-    switch (this.className){
-        case "key digit": 
+    switch (this.className) {
+        case "key digit":
             document.getElementById("input").innerHTML = String(document.getElementById("input").innerHTML) + String(this.innerHTML);
             break;
-        case "key operation": 
+        case "key operation":
             document.getElementById("input").innerHTML = String(document.getElementById("input").innerHTML) + String(this.innerHTML);
             break;
-        case "key bracket": 
+        case "key bracket":
             document.getElementById("input").innerHTML = String(document.getElementById("input").innerHTML) + String(this.innerHTML);
-            break;       
-        case "key clear": 
+            break;
+        case "key clear":
             document.getElementById("input").innerHTML = "";
             break;
         case "key result":
@@ -169,7 +168,7 @@ function clickHandler(event) {
 window.onload = function () {
     // your code here
     let btns = document.querySelectorAll("button");
-for (let i = 0; i < btns.length; i++){
-    btns[i].addEventListener("click", clickHandler, false)
-}
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", clickHandler, false)
+    }
 }
