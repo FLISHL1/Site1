@@ -151,8 +151,10 @@ function autocomplete(event) {
 }
 
 function searchBtnHandler(event) {
-    document.querySelector(".facts-list").dataset.url = document.querySelector(".facts-list").dataset.url + "?q=" + document.getElementById("search").value;
+    let nUrl = document.querySelector(".facts-list").dataset.url;
+    document.querySelector(".facts-list").dataset.url = nUrl + "?q=" + document.getElementById("search").value;
     downloadData(1)
+    document.querySelector(".facts-list").dataset.url = nUrl;
 }
 window.onload = function () {
     downloadData();
