@@ -1,0 +1,56 @@
+header {
+    display: flex;
+    height: 100px;
+    position: static;
+    background-color: black;
+}
+
+body{
+    margin: 0;
+}
+ul{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ol{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+table{
+    border-collapse: collapse;
+}
+table td{
+    border-width: 1px;
+    border-style: solid;
+}
+table th{
+    border-width: 1px;
+    border-style: solid;
+}
+main{
+    min-height: 100vh;
+    color: black;
+    background-color: lightgray;
+}
+
+footer{
+    height: 100px;
+
+    background-color: black;
+}
+
+.iconHeader{
+    height: 90px;
+    margin: auto auto auto 15px;
+}
+
+.func{
+    border-width: 2px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: red;
+    margin: 8px;
+    padding: 5px;
+    display: inline-block;
+}
+
