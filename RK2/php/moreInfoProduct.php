@@ -40,28 +40,29 @@ include "corzFunc.php";
 
 
 <main>
-    <h1 class="h1 text">Товары</h1>
-    <div class="containerProduct">
+    <h1 class="h1 text">Товар</h1>
         <?php
 
-        $result = mysqli_query($mysql, "SELECT * FROM `products`;");
+        $result = mysqli_query($mysql, "SELECT * FROM `products` WHERE ID=".$_GET['id'].";");
 
         while ($name = mysqli_fetch_assoc($result)) {
-            echo ' 
-                    <div class="product">
+            echo ' <div class="product">
                         <img class="logoProduct" src="../static/image/' . $name["image"] . '" alt=' . $name['name'] . '>
                         <p class="text">' . $name['name'] . '</p>
                         <p class="text">' . $name['price'] . '₽</p>
-                        <div>';
-            echo '<input type="button" class="btn" value="В корзину" onClick="addCart(' . $name['ID'] . ')"/>';
-            echo '<input type="button" class="btn" value="Подробная информация" onClick="moreInfo('.$name["ID"].')"/>
+                        <p class="text">Описание: ' . $name['descript'] . '</p>
+                        <p class="text">Количество' . $name['count'] . 'шт.</p>
+                        
+                        <div>
+                        <input type="button" class="btn" value="В корзину" onClick="addCart('.$name['ID'].')">
+                        <input type="button" class="btn" value="Назад" onClick="moreInfo()">
                         </div>
-                    </div>';
+                    </div>
+                    ';
         }
 
 
         ?>
-    </div>
 
 </main>
 
@@ -72,9 +73,12 @@ include 'footer.php';
 <script>
 
 
-    function moreInfo(item) {
-        window.location.replace('moreInfoProduct.php?id='+item);
+
+
+    function moreInfo(item){
+        window.location.replace('products.php');
     }
+
 
 
 </script>

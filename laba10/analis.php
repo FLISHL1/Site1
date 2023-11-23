@@ -36,9 +36,9 @@ function test_it($text)
 // выводим количество слов в тексте
     echo 'Количество слов: ' . count($words) . '<br>';
 
-    echo 'Количество строчных букв: '. getLetterOccurrences($text, 'lowercase') . '<br>';
+    echo 'Количество строчных букв: ' . getLetterOccurrences($text, 'lowercase') . '<br>';
 
-    echo 'Количество заглавных букв: '. getLetterOccurrences($text, 'uppercase') . '<br>';
+    echo 'Количество заглавных букв: ' . getLetterOccurrences($text, 'uppercase') . '<br>';
     $result1 = test_symbs($text);
     echo '<table>
 <thead> 
@@ -49,11 +49,11 @@ function test_it($text)
 </thead>
 <tbody>
 ';
-    while($element = current($result1)) {
+    while ($element = current($result1)) {
         echo '
         <tr>
-            <td>'.  iconv("cp1251", "utf-8",key($result1)) .' </td>
-            <td>'. $element .' </td>
+            <td>' . iconv("cp1251", "utf-8", key($result1)) . ' </td>
+            <td>' . $element . ' </td>
         </tr>
         
         ';
@@ -64,24 +64,23 @@ function test_it($text)
 }
 
 
-
-function test_symbs( $text )
+function test_symbs($text)
 {
-    $symbs=array(); // массив символов текста
-    $l_text=strtolower( $text ); // переводим текст в нижний
+    $symbs = array(); // массив символов текста
+    $l_text = strtolower($text); // переводим текст в нижний
 // последовательно перебираем все символы текста
-    for($i=0; $i<strlen($l_text); $i++)
-    {
-        if( isset($symbs[$l_text[$i]]) ) // если символ есть в массиве
+    for ($i = 0; $i < strlen($l_text); $i++) {
+        if (isset($symbs[$l_text[$i]])) // если символ есть в массиве
             $symbs[$l_text[$i]]++; // увеличиваем счетчик повторов
         else // иначе
-            $symbs[$l_text[$i]]=1; // добавляем символ в массив
+            $symbs[$l_text[$i]] = 1; // добавляем символ в массив
     }
     return $symbs; // возвращаем массив с числом вхождений символов в тексте
 }
 
 
-function getLetterOccurrences($text, $letterCase) {
+function getLetterOccurrences($text, $letterCase)
+{
     $pattern = ($letterCase === 'lowercase') ? '/[a-zа-я]/u' : '/[A-ZА-Я]/u';
     preg_match_all($pattern, $text, $matches);
 
