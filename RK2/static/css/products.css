@@ -1,0 +1,44 @@
+.containerProduct{
+    width: 70vw;
+    min-height: 50vh;
+    background-color: rgba(240, 255, 255, 0.845);
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 15px;
+    border-color: rgba(141, 194, 194, 0.845);
+    margin: auto auto 50px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.product{
+    background-color: rgba(240, 255, 255, 0.845);
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 15px;
+    border-color: rgba(141, 194, 194, 0.845);
+    padding: 20px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 250ms, border-color 250ms;
+
+}
+.product:hover{
+    background-color: rgba(196, 217, 217, 0.845);
+
+    border-color: rgba(106, 147, 147, 0.845);
+
+}
+.logoProduct{
+    margin: auto;
+    width: 150px;
+    height: 200px;
+    border-radius: 25px;
+}
+
+.h1{
+    margin: 100px auto 50px auto;
+    font-size: 30pt;
+    /* text-align: center; */
+}
