@@ -8,6 +8,9 @@ function test_it($text)
 // определяем ассоциированный массив с цифрами
     $cifra = array('0' => true, '1' => true, '2' => true, '3' => true, '4' => true,
         '5' => true, '6' => true, '7' => true, '8' => true, '9' => true);
+    $punctuation_marks = array(
+        '.'=>true, ','=>true, '!'=>true, '?'=>true, '...'=>true, ':'=>true, ';'=>true, '-'=>true, '('=>true, ')'=>true, '"'=>true
+    );
 // вводим переменные для хранения информации о:
     $cifra_amount = 0; // количество цифр в тексте
     $word_amount = 0; // количество слов в тексте
@@ -35,10 +38,9 @@ function test_it($text)
     echo 'Количество цифр: ' . $cifra_amount . '<br>';
 // выводим количество слов в тексте
     echo 'Количество слов: ' . count($words) . '<br>';
+    echo 'Количество строчных букв: ' . countUpperLetters($text). '<br>';
 
-    echo 'Количество строчных букв: ' . getLetterOccurrences($text, 'lowercase') . '<br>';
-
-    echo 'Количество заглавных букв: ' . getLetterOccurrences($text, 'uppercase') . '<br>';
+    echo 'Количество заглавных букв: ' . countLowerLetters($text) . '<br>';
     $result1 = test_symbs($text);
     echo '<table>
 <thead> 
@@ -61,6 +63,35 @@ function test_it($text)
     }
     echo '</tbody></table>';
 //    echo 'Количество вхождений каждого символа текста: '. implode('; ', test_symbs($text)) . '<br>';
+    $word=''; // текущее слово
+    $words=array(); // список всех слов
+    $punctuation_marks_amount = 0;
+    for($i=0; $i<strlen($text); $i++) // перебираем все символы текста
+    {
+        if( array_key_exists(iconv("cp1251", "utf-8",$text[$i]), $punctuation_marks) )
+            $punctuation_marks_amount++;
+        if ($word != '' && $text[$i] == '-'){
+            $word .= $text[$i];
+            continue;
+        }
+        if ($text[$i] == ' ' || array_key_exists(iconv("cp1251", "utf-8",$text[$i]), $punctuation_marks)){
+            if ($word == '') continue;
+            if (isset($words[$word])){
+                $words[$word] += 1;
+            } else{
+                $words[$word] = 1;
+            }
+
+            $word = '';
+        } else {
+                $word .= $text[$i];
+        }
+    }
+    ksort($words);
+    foreach ($words as $key => $value) {
+        echo '<p style="color: green">'.iconv("cp1251", "utf-8",$key).': '.$value."<br>\r\n</p>";
+    }
+    echo 'Количество знаков препинания: '.$punctuation_marks_amount.'<br>';
 }
 
 
@@ -79,17 +110,14 @@ function test_symbs($text)
 }
 
 
-function getLetterOccurrences($text, $letterCase)
-{
-    $pattern = ($letterCase === 'lowercase') ? '/[a-zа-я]/u' : '/[A-ZА-Я]/u';
-    preg_match_all($pattern, $text, $matches);
-
-    $occurrences = count($matches[0]);
-
-    return $occurrences;
+function countUpperLetters($string) {
+    return mb_strlen( preg_replace('/[^A-ZА-ЯЁ]/u', '', iconv("cp1251", "utf-8", $string)), 'UTF-8');
 }
 
+function countLowerLetters($string) {
+    return mb_strlen( preg_replace('/[^a-zа-яё]/u', '', iconv("cp1251", "utf-8", $string)), 'UTF-8');
 
+}
 
 
 
