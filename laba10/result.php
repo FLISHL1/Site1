@@ -23,25 +23,12 @@
 <main>
     <?php
     include 'analis.php';
-    if (!isset($_POST['text'])) {
-        echo '<p>Нет текста для анализа</p>';
+    if (!isset($_POST['text']) || $_POST['text'] == '') {
+        echo '<p style="margin: 0; padding-top: 10px;" >Нет текста для анализа</p>';
     } else {
         $inputText = $_POST['text'];
-        echo '<div class="src_text">' . $_POST['text'] . '</div>';
-        /*echo '<table>
-            <thead>
-            <tr>
-            <th>Кол-во символов в тексте</th>
-            <th>Кол-во букв</th>
-            <th>Кол-во строчных букв</th>
-            <th>Кол-во заглавных букв</th>
-            <th>Кол-во знаков препинания</th>
-            <th>Кол-во цифр</th>
-            <th>Кол-во слов</th>
-            <th>Кол-во вхождений каждого символа</th>
-            <th>Список всех слов в тексте и кол-во вхождений, отсортированный по алфавиту</th>
-</tr>
-</thead>';*/
+        echo '<p style="color: green;">' . $_POST['text'] . '</p>';
+
         test_it(iconv("utf-8", "cp1251", $_POST['text']));
 
     }
@@ -52,7 +39,7 @@
 
 
 <footer>
-
+    <a style="color: black; background-color: gray; border-radius: 7px; padding: 5px; margin: 10px; margin-top: 15px" href="index.html"> Назад</a>
 </footer>
 
 </body>

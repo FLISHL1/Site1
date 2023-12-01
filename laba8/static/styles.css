@@ -7,8 +7,7 @@ body {
     background-color: #1d3557;
     color: white;
     font-size: 40px;
-    padding: 20px;
-    padding-left: 50px;
+    padding: 20px 20px 20px 50px;
 }
 
 .header > nav {
@@ -65,7 +64,8 @@ body {
 }
 
 .current-interval-info {
-    margin-left: auto;
+
+    margin-left: 250px;
 }
 
 .per-page-btn {
@@ -115,9 +115,16 @@ body {
 .search-form {
     margin: 40px 0;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form {
+    flex: 1 1 100%;
 }
 
 .search-field {
+    width: 75%;
     flex-grow: 1;
     height: 40px;
     border: 5px solid #e63946;
@@ -128,7 +135,7 @@ body {
 }
 
 .search-btn {
-    padding: 0 20px;
+    padding: 5px;
     font-size: 100%;
     font-weight: bold;
     background-color: #e63946;
@@ -141,26 +148,29 @@ body {
 }
 
 .search-btn:hover {
-    background-color: #F2F5F1;
+    /*background-color: #F2F5F1;*/
     color: black;
 }
-#autocomplete-list {
-    /* position: absolute; */
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-    z-index: 1;
+
+.hidden {
+    display: none;
 }
 
-#autocomplete-list li {
-    padding: 8px;
-    cursor: pointer;
+.list {
+    width: 75%;
 }
 
-#autocomplete-list li:hover {
-    background-color: #e5e5e5;
+#search_box-result {
+    position: absolute;
+    /*top: 100%;*/
+    /*left: 0;*/
+    background-color: gray;
+    border: 1px solid #ddd;
+    background: #fff;
+    z-index: 9999;
+}
+
+#search_box-result ul {
+    width: inherit;
+    list-style: none;
 }

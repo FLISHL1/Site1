@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Главная</title>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="static/css/header.css" media="screen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    
+    <!-- <meta name="http-equiv=&quot;Content-Type&quot;" content="text/html; charset=utf-8"> -->
+
+</head>
+
+<body>
+    <header>
+        <img src="static/image/cat_logo.png" width="80px" height="80px" style="margin: auto 0 auto 25px;">
+        <nav class='navbar'>
+            <a href="index.php" class="navbtn" id="mainbtn">Моя страница</a>
+            <a href="index.php" class="navbtn">Главная</a>
+            <a href="#bottom" class="navbtn">Контакты</a>
+            <a href="" class="navbtn">Достижения</a>
+        </nav>
+        <a class="navbtn" id="loginbtn" href="html/login.html">Login</a>
+    </header>
+
+
+    <main>
+        <script src = "JavaScript/laba6.js"> </script>
+        <div class="ins">
+            Возвести в степень:
+            <input type="text" id="pow_x">
+            <input type="text" id="pow_n">
+            <label id = "result_pow"> </label>
+            <input id="btn_pow" type="button" value="Результат" onclick="pow(document.getElementById('pow_x').value, document.getElementById('pow_n').value)">
+        </div>
+        <div class="ins">
+            НОД:
+            <input type="text" id="nod_a">
+            <input type="text" id="nod_b">
+            <label id = "result_nod"> </label>
+            <input id="btn_nod" type="button" value="Результат" onclick="gcd(document.getElementById('nod_a').value, document.getElementById('nod_b').value)">
+        </div>
+        <div class="ins">
+            Мниимальное число:
+            <input type="text" id="min_x">
+            <label id = "result_min"> </label>
+            <input id="btn_min" type="button" value="Результат" onclick="minDigit(document.getElementById('min_x').value)">
+        </div>
+
+        <div class="ins">
+            Pluralization:
+            <input type="text" id="plur_x">
+            <label id = "result_plur"> </label>
+            <input id="btn_plur" type="button" value="Результат" onclick="pluralizeRecords(document.getElementById('plur_x').value)">
+        </div>
+
+        <div class="ins">
+            Число Фибоначчи:
+            <input type="text" id="fibb_x">
+            <label id = "result_fibb"> </label>
+            <input id="btn_fibb" type="button" value="Результат" onclick="fibb(document.getElementById('fibb_x').value)">
+        </div>
+        <script>
+            // alert(pluralizeRecords(15));
+            // alert(fibb(15));
+            
+
+        </script>
+            
+    </main>
+
+
+    <footer>
+        <div class="contact" id="bottom">  
+        <p class="contact_text"><b>Email:</b> kirill15022005@gmail.com</p>
+        <p class="contact_text"><b>Телефон:</b> +7 (960) 470-79-81</p>
+        </div>
+        <a href="html/feedback.html" class="contact_text navbtn">Обратная связь</a>
+    </footer>
+
+</body>

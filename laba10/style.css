@@ -18,6 +18,7 @@ ol{
 }
 table{
     border-collapse: collapse;
+    margin: 15px;
 }
 table td{
     border-width: 1px;
@@ -53,7 +54,9 @@ footer{
     padding: 5px;
     display: inline-block;
 }
-.src_text{
-
+p{
+    margin: 15px;
+    margin-top: 0px;
+    padding-top: 5px;
 }
 
