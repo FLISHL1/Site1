@@ -1,0 +1,130 @@
+header {
+    display: flex;
+    height: 100px;
+    position: static;
+    background-color: black;
+}
+
+body{
+    margin: 0;
+}
+ul{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ol{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+table{
+    border-collapse: collapse;
+}
+table td{
+    border-width: 1px;
+    border-style: solid;
+}
+table th{
+    border-width: 1px;
+    border-style: solid;
+}
+main{
+    min-height: 100vh;
+    color: black;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+}
+
+footer{
+    height: 100px;
+    display: flex;
+    background-color: black;
+}
+
+.iconHeader{
+    height: 60px;
+    margin: auto 15px auto 15px;
+}
+
+.func{
+    border-width: 2px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: red;
+    margin: 8px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.link{
+    margin: auto 15px auto 30px;
+    color: white;
+    background-color: #454444;
+    padding: 5px;
+    border-radius: 12px;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Arial';
+    transition: color 200ms, background-color 200ms;
+}
+.link:hover{
+    color: #d2d0d0;
+    background-color: #757474;
+}
+.select {
+    color: orange;
+}
+.select:hover {
+    color: #8f5d02;
+}
+
+footer p{
+    margin: auto 15px auto 30px;
+    color: white;
+}
+.sidenav {
+    min-height: 100vh;
+    width: 160px;
+
+    background-color: #7e7d7d;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+    font-family: Arial;
+}
+
+.sidenav a:hover {
+    color: #9b9b9b;
+}
+.sidenav .select {
+    color: orange;
+}
+
+.sidenav .select:hover{
+    color: #8f5d02;
+}
+
+.ttRow{
+    border-style: solid;
+    border-width: 1px;
+    border-color: yellow;
+    border-radius: 2px;
+    padding: 10px;
+    background-color: #9b9b9b;
+    color: white;
+    margin: 10px auto;
+}
+
+.right_block{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    flex-wrap: wrap;
+    margin: auto;
+}
