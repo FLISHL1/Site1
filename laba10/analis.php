@@ -118,7 +118,7 @@ function test_it($text)
 function test_symbs($text)
 {
     $symbs = array(); // массив символов текста
-    $l_text = strtolower($text); // переводим текст в нижний
+    $l_text = mb_strtolower($text, "cp1251"); // переводим текст в нижний
 // последовательно перебираем все символы текста
     for ($i = 0; $i < strlen($l_text); $i++) {
         if (isset($symbs[$l_text[$i]])) // если символ есть в массиве
