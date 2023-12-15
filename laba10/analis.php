@@ -24,7 +24,7 @@ function test_it($text)
         if (array_key_exists($text[$i], $cifra)) // если встретилась цифра
             $cifra_amount++; // увеличиваем счетчик цифр
 // если в тексте встретился пробел или текст закончился
-        if( array_key_exists(iconv("cp1251", "utf-8",$text[$i]), $punctuation_marks) )
+        if(array_key_exists(iconv("cp1251", "utf-8",$text[$i]), $punctuation_marks) )
         $punctuation_marks_amount++;
         if ($text[$i] == ' ' || $i == strlen($text) - 1) {
             if ($word) // если есть текущее слово
@@ -40,37 +40,11 @@ function test_it($text)
             $word .= $text[$i]; //добавляем в текущее слово новый символ
                    if ($word != '' && $text[$i] == '-'){
             $word .= $text[$i];
-            continue;
+            // continue;
         }
-        if ($text[$i] == ' ' || array_key_exists(iconv("cp1251", "utf-8",$text[$i]), $punctuation_marks)){
-            if ($word == '') continue;
-            if (isset($words[$word])){
-                $words[$word] += 1;
-            } else{
-                $words[$word] = 1;
-            }
+        
 
-            $word = '';
-        } else {
-                $word .= $text[$i];
-        }
 
-        if ($word != '' && $text[$i] == '-'){
-            $word .= $text[$i];
-            continue;
-        }
-        if ($text[$i] == ' ' || array_key_exists(iconv("cp1251", "utf-8",$text[$i]), $punctuation_marks)){
-            if ($word == '') continue;
-            if (isset($words[$word])){
-                $words[$word] += 1;
-            } else{
-                $words[$word] = 1;
-            }
-
-            $word = '';
-        } else {
-                $word .= $text[$i];
-        }
     }
 // выводим количество цифр в тексте
     echo '<p>Количество цифр: ' . $cifra_amount . '<br></p>';
@@ -103,6 +77,16 @@ function test_it($text)
         next($result1);
     }
     echo '</tbody></table>';
+    $fd = preg_match_all('/\s+/', $text);
+    $words;
+    foreach ($i = 0; $i < count($fd) ;$i++){
+        $word = $fd[$i];
+        if (isset($words[$word])){
+            $words[$word]++;
+        } else {
+            $words[$word] = 1;
+        }
+    }
     ksort($words);
     echo '<table style="margin-top: 25px;"><thead><tr><th>Слово</th><th>Кол-во</th></tr></thead><tbody>';
     foreach ($words as $key => $value) {
@@ -110,16 +94,18 @@ function test_it($text)
     }
     echo '</tbody></table>';    
 //    echo 'Количество вхождений каждого символа текста: '. implode('; ', test_symbs($text)) . '<br>';
-
-
+   
 }
 
 
 function test_symbs($text)
 {
+
+
     $symbs = array(); // массив символов текста
+    
     $l_text = strtolower($text); // переводим текст в нижний
-// последовательно перебираем все символы текста
+    // последовательно перебираем все символы текста
     for ($i = 0; $i < strlen($l_text); $i++) {
         if (isset($symbs[$l_text[$i]])) // если символ есть в массиве
             $symbs[$l_text[$i]]++; // увеличиваем счетчик повторов

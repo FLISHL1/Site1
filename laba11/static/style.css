@@ -18,10 +18,28 @@ ol{
 }
 table{
     border-collapse: collapse;
+    font-size: 16pt;
+    font-family: Arial;
+    margin: auto;
+    color:white;
+    border-color: yellow;
+    margin: 4px;
 }
-table td{
+table tbody{
+
+}
+
+table thead{
+    margin: 10px;
+}
+
+table tr{
     border-width: 1px;
     border-style: solid;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #787878;
+
 }
 table th{
     border-width: 1px;
@@ -120,11 +138,22 @@ footer p{
     color: white;
     margin: 10px auto;
 }
-
+.ttRowSingle{
+    border-style: solid;
+    border-width: 1px;
+    border-color: yellow;
+    border-radius: 2px;
+    padding: 10px;
+    background-color: #9b9b9b;
+    color: white;
+    margin: 10px auto;
+}
 .right_block{
     display: flex;
     flex-direction: row;
     width: 300px;
     flex-wrap: wrap;
     margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

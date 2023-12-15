@@ -12,7 +12,7 @@ function outDivForm()
             echo '</div>';
         }
     } else {
-        echo '<div class="ttRow">'; // оформляем таблицу в блочной форме
+        echo '<div class="ttRowSingle">'; // оформляем таблицу в блочной форме
         outRow($_GET['content']); // выводим выбранный в меню столбец
         echo '</div>';
     }
@@ -21,29 +21,67 @@ function outDivForm()
 function outTableForm()
 {
 // если параметр content не был передан в программу
-    echo '<table>';
+    
     if (!isset($_GET['content'])) {
 
         for ($i = 2; $i < 10; $i++) // цикл со счетчиком от 2 до 9
         {
-            echo '<div class="ttRow">'; // оформляем таблицу в блочной форме
-            outRow($i); // вызывем функцию, формирующую содержание
+            echo '<table>';
+            outRowTable($i); // вызывем функцию, формирующую содержание
             // столбца умножения на $i (на 4, если $i==4)
-            echo '</div>';
+    echo '</table>';
+
         }
     } else {
-        echo '<div class="ttSingleRow">'; // оформляем таблицу в блочной форме
-        outRow($_GET['content']); // выводим выбранный в меню столбец
-        echo '</div>';
-    }
-    echo '</table>';
-}
+        echo '<table>';
 
+        outRowTable($_GET['content']); // выводим выбранный в меню столбец
+    echo '</table>';
+
+    }
+}
+function outRowTable($n)
+{
+    echo '<thead><tr>';
+        echo '<th>'.$n. '</th>'; // выводим строку столбца с тегом
+
+    echo '</tr></thead>';
+    echo '<tbody>';
+    for ($i = 2; $i <= 9; $i++) {
+        echo '<tr><td>';
+        $hrefContent = '?';
+        $hrefHtmlType = '';
+        if (($i*$n) <= 9){
+            $hrefContent = '?content='.($i*$n).'&';
+        }
+        if (isset($_GET['html_type']) && $_GET['html_type'] == 'div'){
+            $hrefHtmlType = 'html_type=div';
+        } else {
+            $hrefHtmlType = 'html_type=table';
+        }
+        echo '<a href="?content='.$n.'&'.$hrefHtmlType.'" style="text-decoration: none; color: white;">'.$n . '</a>x<a href="?content='.$i.'&'.$hrefHtmlType.'" style="text-decoration: none; color: white;">' . $i . '</a>=<a href="'.$hrefContent.$hrefHtmlType.'" style="text-decoration: none; color: white;">' . ($i * $n) . '</a>'; // выводим строку столбца с тегом
+        echo '</td>';
+    }
+    echo '</tr>';
+}
 // функция ВЫВОДИТ СТОЛБЕЦ ТАБЛИЦЫ УМНОЖЕНИЯ
 function outRow($n)
 {
-    for ($i = 2; $i <= 9; $i++) // цикл со счетчиком от 2 до 9
-        echo $n . 'x' . $i . '=' . ($i * $n) . '<br>'; // выводим строку столбца с тегом
+    for ($i = 2; $i <= 9; $i++){ // цикл со счетчиком от 2 до 9
+        $hrefContent = '?';
+        $hrefHtmlType = '';
+        if (($i*$n) <= 9){
+            $hrefContent = '?content='.($i*$n).'&';
+            
+        }
+        if (isset($_GET['html_type']) && $_GET['html_type'] == 'div'){
+            $hrefHtmlType = 'html_type=div';
+        } else {
+            $hrefHtmlType = 'html_type=table';
+        }
+        echo '<a href="?content='.$n.'&'.$hrefHtmlType.'" style="text-decoration: none; color: white;">'.$n . '</a>x<a href="?content='.$i.'&'.$hrefHtmlType.'" style="text-decoration: none; color: white;">' . $i . '</a>=<a href="'.$hrefContent.$hrefHtmlType.'" style="text-decoration: none; color: white;">' . ($i * $n) . '</a><br>'; // выводим строку столбца с тегом
+
+    }
 }
 
 ?>
@@ -118,10 +156,10 @@ function outRow($n)
     <div class="right_block">
     <?php
 
-    if (isset($_GET['html_type']) && $_GET['html_type'] == 'table')
-        outTableForm(); // выводим таблицу умножения в табличной форме
-    else
+    if (isset($_GET['html_type']) && $_GET['html_type'] == 'div')
         outDivForm(); // выводим таблицу умножения в блочной форме
+    else
+        outTableForm(); // выводим таблицу умножения в табличной форме
 
 
     ?>
@@ -135,6 +173,7 @@ function outRow($n)
         } else {
             echo 'блок';
         } ?></p>
+    <p>Таблица на <?php if (isset($_GET['content'])) echo $_GET['content']; else echo 'все';?>
     <p>Дата и время: <?php echo date("Y-m-d H:i:s") ?> </p>
 </footer>
 
